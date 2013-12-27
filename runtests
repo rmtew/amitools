@@ -1,0 +1,20 @@
+#!/usr/bin/env python2.7
+
+import os
+import unittest
+
+
+def find_tests(test_path):
+  runner = unittest.TextTestRunner()
+  loader = unittest.TestLoader()
+  suite = unittest.TestSuite()
+  suite.addTests(loader.discover(test_path))
+  runner.run(suite)
+  
+
+if __name__ == "__main__":
+  test_dir = os.path.dirname(__file__)
+  if not test_dir:
+    test_dir = os.getcwd()
+  test_path = os.path.join(test_dir, "unittests")
+  find_tests(test_path)

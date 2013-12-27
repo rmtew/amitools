@@ -1,6 +1,6 @@
 #!/usr/bin/env python2.7
 #
-# vamos [optoins] <amiga binary> [args ...]
+# vamos [options] <amiga binary> [args ...]
 #
 # run an m68k AmigaOS binary
 #
@@ -38,7 +38,7 @@ class MusashiCPU(CPU):
     return m68k.get_reg(m68k.M68K_REG_PC)
   def w_sr(self, val):
     m68k.set_reg(m68k.M68K_REG_SR,val)
-  def r_sr(sefl):
+  def r_sr(self):
     return m68k.get_reg(m68k.M68K_REG_SR)
   def pulse_reset(self):
     m68k.pulse_reset()

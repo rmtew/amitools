@@ -16,7 +16,9 @@ from Trampoline import Trampoline
 # lib
 from lib.ExecLibrary import ExecLibrary
 from lib.DosLibrary import DosLibrary
+from lib.GraphicsLibrary import GraphicsLibrary
 from lib.IconLibrary import IconLibrary
+from lib.IntuitionLibrary import IntuitionLibrary
 from lib.IFFParseLibrary import IFFParseLibrary
 from lib.lexec.ExecStruct import *
 from lib.dos.DosStruct import *
@@ -189,6 +191,12 @@ class Vamos:
     # iffparse
     self.iffparse_lib_def = IFFParseLibrary()
     self.lib_mgr.register_int_lib(self.iffparse_lib_def)
+    # intuition
+    self.intuition_lib_def = IntuitionLibrary()
+    self.lib_mgr.register_int_lib(self.intuition_lib_def)
+    # graphics
+    self.graphics_lib_def = GraphicsLibrary()
+    self.lib_mgr.register_int_lib(self.graphics_lib_def)
 
   def init_trampoline(self):
     self.tr_mem_size = 256
